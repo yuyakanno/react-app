@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Omikuji } from "./pages/Omikuji";
 import { Janken } from "./pages/Janken";
+import { BookCreate } from "./pages/BookCreate";
+
 import * as React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -8,6 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import SignLanguageIcon from '@mui/icons-material/SignLanguage';
 import InsightsIcon from '@mui/icons-material/Insights';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 const style = {
   width: '100%',
@@ -49,11 +52,17 @@ return(
           <Link to="/janken"><SignLanguageIcon /> じゃんけん</Link>
         </ListItem>
         <Divider light />
+        <ListItem button>
+          <Link to="/book-create"><MenuBookIcon /> 投稿する</Link>
+        </ListItem>
+    
+
   </List>
 
     <Routes>
       <Route path="/omikuji" element={<Omikuji />} />
       <Route path="/janken" element={<Janken />} />
+      <Route path="/book-create" element={<BookCreate />} />
     </Routes>
 
   </BrowserRouter>
